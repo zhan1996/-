@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu} from 'element-ui'
+import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu,Breadcrumb,BreadcrumbItem,Row,Col, Card, TableColumn,Table, Switch, Tooltip, Pagination,Dialog} from 'element-ui'
 
 import './assets/css/reset.css'
 
@@ -61,6 +61,17 @@ Vue.use(MenuItemGroup)
 Vue.use(Menu)
 Vue.use(Submenu)
 Vue.use(MenuItem)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Card)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Switch)
+Vue.use(Tooltip)
+Vue.use(Pagination)
+Vue.use(Dialog)
 
 
 
