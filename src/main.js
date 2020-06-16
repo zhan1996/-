@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu,Breadcrumb,BreadcrumbItem,Row,Col, Card, TableColumn,Table, Switch, Tooltip, Pagination,Dialog} from 'element-ui'
+import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu,Breadcrumb,BreadcrumbItem,Row,Col, Card, TableColumn,Table, Switch, Tooltip, Pagination,Dialog, MessageBox, Tag} from 'element-ui'
 
 import './assets/css/reset.css'
 
@@ -36,7 +36,7 @@ axios.interceptors.response.use(function(response){
     if(response.status!== 200){
         Message.error('网络异常')
     } else {
-        if(response.data.meta.status !== 200){
+        if(response.data.meta.status !== 200 &&　response.data.meta.status !== 201){
             Message.error(response.data.meta.msg || '异常问题')
         }
     }
@@ -48,6 +48,7 @@ axios.interceptors.response.use(function(response){
 axios.defaults.baseURL = 'http://www.klxin.cn:8888/api/private/v1/'
 Vue.prototype.$http = axios
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 
 Vue.use(Button)
 Vue.use(Form)
@@ -72,6 +73,7 @@ Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
+Vue.use(Tag)
 
 
 
