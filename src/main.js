@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu,Breadcrumb,BreadcrumbItem,Row,Col, Card, TableColumn,Table, Switch, Tooltip, Pagination,Dialog, MessageBox, Tag} from 'element-ui'
+// 引入插件
+import TreeTable from 'vue-table-with-tree-grid'
+import { Button,Form,FormItem,Input,Message,Container,Main,Aside,Header,MenuItemGroup,MenuItem,Menu,Submenu,Breadcrumb,BreadcrumbItem,Row,Col, Card, TableColumn,Table, Switch, Tooltip, Pagination,Dialog, MessageBox, Tag,Tree,Select,Option,Cascader} from 'element-ui'
 
 import './assets/css/reset.css'
 
@@ -74,10 +76,14 @@ Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Tag)
+Vue.use(Tree)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Cascader)
 
 
 
-
+Vue.component('tree-table', TreeTable)
 
 Vue.config.productionTip = false
 

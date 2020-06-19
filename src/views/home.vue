@@ -123,6 +123,7 @@ export default{
         background-color: #333744;
         .toggle-auto {
             color: #fff;
+            text-align: center;
         }
         .el-menu {
             border:none;
