@@ -13,7 +13,7 @@
                         <div class="toggle-auto" @click="isCollapse = !isCollapse">|||</div>
                         <el-menu :default-active="defaultActive" class="el-menu-vertical-demo" unique-opened router @open="handleOpen" @close="handleClose" :collapse="isCollapse"
             :collapse-transition="false" background-color="#333744" text-color="#fff" active-text-color="#409eff">
-                        <el-submenu :index="submenu.id+''" v-for="submenu in menuList" :key="submenu.id">
+                        <el-submenu :index='"/"+submenu.path' v-for="submenu in menuList" :key="submenu.id">
                             <!-- 一级导航 -->
                             <template slot="title">
                             <i :class="navIconObj[submenu.id]"></i>
@@ -23,7 +23,7 @@
                             </template>
                             <!-- 二级导航 -->
                             <!-- 是否使用 vue-router 的模式，启用该模式会在激活导航时以 index 作为 path 进行路由跳转 -->
-                            <el-menu-item @click="saveActive(item.path)" :index="item.path" v-for="item in submenu.children" :key="item.id">
+                            <el-menu-item @click="saveActive(item.path)" :index="'/'+item.path" v-for="item in submenu.children" :key="item.id">
                             <template slot="title">
                             <i class="el-icon-menu"></i>
                             <span>{{item.authName}}</span>

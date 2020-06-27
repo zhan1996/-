@@ -105,3 +105,18 @@ ul,ol,li{
   .el-pagination {
     margin-top: 15px;
   }
+
+  .el-cascader-menu{
+    height: 300px;
+  }
+
+  .el-steps{
+    margin:15px 0;
+  }
+  .el-step__title{
+    font-size: 13px;
+  }
+  /* //在global.css样式中添加富文本编辑器的最小高度 */
+.ql-editor{
+    min-height: 300px
+}
