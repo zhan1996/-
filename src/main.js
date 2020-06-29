@@ -18,6 +18,11 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import axios from 'axios'
 
+//导入进度条插件
+import NProgress from 'nprogress'
+//导入进度条样式
+import 'nprogress/nprogress.css'
+
 
 
 // 请求拦截器
@@ -29,6 +34,8 @@ import axios from 'axios'
 //     return Promise.reject(error)
 // })
 axios.interceptors.request.use(function (config) {
+    //当进入request拦截器，表示发送了请求，我们就开启进度条
+    NProgress.start()
     // Do something before request is sent
     // 在请求发送之前做一些事
     // 在请求发送之前 配置headers头信息 config是一个配置对象 你想配置什么就在config上配置即可
@@ -42,6 +49,8 @@ axios.interceptors.request.use(function (config) {
 
 // 相应拦截器
 axios.interceptors.response.use(function(response){
+    //当进入response拦截器，表示请求已经结束，我们就结束进度条
+    NProgress.done()
     if(response.status!== 200){
         Message.error('网络异常')
     } else {
